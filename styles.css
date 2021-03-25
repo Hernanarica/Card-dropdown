@@ -1,0 +1,233 @@
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 'Roboto';
+}
+
+.wrapper {
+   position: relative;
+   inset-inline-start: 0;
+   inset-block-start: 0;
+   inline-size: 320px;
+   block-size: 480px;
+   overflow: hidden;
+}
+
+#overlay {
+   position: absolute;
+   inset-inline-start: calc(50% - (310px / 2));
+   inset-block-start: 0;
+   inline-size: 310px;
+   block-size: 200px;
+   z-index: 2;
+   background-color: rgba(0, 0, 0, .6);
+   backdrop-filter: blur(1px);
+}
+
+.screen1 {
+   position: absolute;
+   inset-inline-start: calc(50% - (310px / 2));
+   inset-block-start: 50px;
+   /*inset-block-start: calc(50% - (200px / 2));*/
+   inline-size: 310px;
+   block-size: 200px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-image: url(./background.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 14px;
+   overflow: hidden;
+   z-index: 2;
+}
+
+.screen1__poster {
+   font-size: 0;
+   z-index: 3;
+}
+
+.screen1__poster img {
+   width: 100px;
+}
+
+.screen1__titles {
+   box-sizing: border-box;
+   padding: 8px;
+   color: #fafafa;
+   font-size: 0;
+   z-index: 3;
+}
+
+.screen1__titles h1 {
+   font-size: 18px;
+   margin-bottom: 5px;
+}
+
+.screen1__titles h2 {
+   font-size: 12px;
+   font-weight: 400;
+   margin-bottom: 12px;
+}
+
+.screen1__titles a {
+   color: #fafafa;
+   font-weight: 400;
+   text-decoration: none;
+   font-size: 12px;
+   border-radius: 5px;
+   border: 1px solid #fafafa;
+   padding: 2px 5px;
+}
+
+.screen1__arrow {
+   position: absolute;
+   inset-block-end: 6px;
+   inset-inline-end: calc(50% - (22px / 2));
+   width: 20px;
+   height: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #fafafa;
+   font-size: 20px;
+   font-family: 'Oswald';
+   z-index: 3;
+   border: 2px solid #fafafa;
+   border-radius: 50%;
+   transition: 1.2s;
+   background-image: url(./arrow.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   will-change: transform;
+}
+
+.screen2 {
+   box-sizing: border-box;
+   position: absolute;
+   inset-inline-start: calc(50% - (310px / 2));
+   inset-block-start: 50px;
+   inline-size: 310px;
+   block-size: 200px;
+   padding: 15px 15px 0 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-color: #1A1A1A;
+   border-radius: 14px;
+   overflow: hidden;
+   color: #fafafa;
+   z-index: 1;
+   will-change: transform;
+}
+
+.screen2 h3 {
+   font-size: 22px;
+   align-self: flex-start;
+   margin-bottom: 15px;
+   width: 100%;
+   border-bottom: 1px solid #717171;
+}
+
+.screen2 p {
+   margin-bottom: 15px;
+   color: #fafafa;
+   font-size: 12px;
+   font-weight: 200;
+}
+
+.avatars {
+   align-self: flex-end;
+   display: flex;
+}
+
+.avatar-1,
+.avatar-2,
+.avatar-3,
+.avatar-4,
+.avatar-5 {
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   margin-left: -5px;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.avatar-1 {
+   background-image: url(./cara-boun.jpg);
+}
+
+.avatar-2 {
+   background-image: url(./cara-namaari.jpg);
+}
+
+.avatar-3 {
+   background-image: url(./cara-sisu.jpg);
+}
+
+.avatar-4 {
+   background-image: url(./cara-tong.jpg);
+}
+
+.avatar-5 {
+   background-image: url(./cara-raya.jpg);
+}
+
+/* -------- Animations -------- */
+.move-down {
+   animation: 750ms moveDown forwards;
+}
+
+@keyframes moveDown {
+   from {
+      transform: translateY(0);
+   }
+
+   to {
+      transform: translateY(180px);
+   }
+}
+
+.move-up {
+   animation: 750ms moveUp forwards;
+}
+
+@keyframes moveUp {
+   from {
+      transform: translateY(180px);
+   }
+
+   to {
+      transform: translateY(0);
+   }
+}
+
+.rotate-up {
+   animation: 750ms rotUp forwards;
+}
+
+@keyframes rotUp {
+   from {
+      transform: rotate(0);
+   }
+
+   to {
+      transform: rotate(180deg);
+   }
+}
+
+.rotate-down {
+   animation: 750ms rotDown forwards;
+}
+
+@keyframes rotDown {
+   from {
+      transform: rotate(180deg);
+   }
+
+   to {
+      transform: rotate(0deg);
+   }
+}
